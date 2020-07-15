@@ -23,6 +23,7 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
+  client.user.setActivity('Smoove :)', { type: 'LISTENING' });
   console.log('-> Smoove online');
 });
 
