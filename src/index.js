@@ -91,8 +91,9 @@ client.on('message', async (message) => {
     if (message.channel.type === 'text') {
       const serverQueue = queue.get(message.guild.id);
       command.execute(client, message, args, serverQueue, queue, youtube);
+    } else {
+      command.execute(client, message, args, queue, youtube);
     }
-    command.execute(client, message, args, queue, youtube);
   } catch (error) {
     console.error(error);
     message.reply('ocorreu um erro ao tentar executar esse comando');
