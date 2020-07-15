@@ -1,6 +1,6 @@
 module.exports = {
   name: 'skip',
-  aliases: ['sk'],
+  aliases: ['sk', 'pular'],
   description: 'Pula a música que está tocando.',
   guildOnly: true,
   usage: '',

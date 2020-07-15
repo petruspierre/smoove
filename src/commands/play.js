@@ -4,7 +4,7 @@ const timeFormat = require('../util/timeFormat');
 
 module.exports = {
   name: 'play',
-  aliases: ['p'],
+  aliases: ['p', 'tocar'],
   description: 'Toque uma música.',
   usage: '<titulo> ou <Youtube link>',
   guildOnly: true,

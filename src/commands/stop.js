@@ -1,6 +1,6 @@
 module.exports = {
   name: 'stop',
-  aliases: ['st'],
+  aliases: ['st', 'parar'],
   description: 'Para de tocar.',
   guildOnly: true,
   usage: '',
