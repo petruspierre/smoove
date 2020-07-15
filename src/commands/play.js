@@ -80,7 +80,7 @@ module.exports = {
           voiceChannel,
           connection: null,
           songs: [],
-          volume: 3,
+          volume: 2,
           playing: true,
         };
 
@@ -113,14 +113,20 @@ module.exports = {
 
         const searchEmbed = new MessageEmbed()
           .setColor('#15e5e0')
-          .setTitle(`Resultados encontrados para:${args.join(' ')}`);
+          .setTitle(`Resultados encontrados para: ${args.join(' ')}`);
 
         result.items.forEach((item, index) => {
           searchEmbed.addField(`#${index + 1} - ${item.snippet.title}`, `${item.snippet.channelTitle}`);
         });
 
         message.channel.send(searchEmbed).then((msg) => {
-          msg.react('1️⃣').then(() => msg.react('2️⃣').then(() => msg.react('3️⃣')));
+          msg.react('1️⃣')
+            .then(() => {
+              msg.react('2️⃣')
+                .then(() => msg.react('3️⃣'))
+                .catch((_) => {});
+            })
+            .catch((_) => {});
 
           const filter = (reaction, user) => ['1️⃣', '2️⃣', '3️⃣']
             .includes(reaction.emoji.name) && user.id === message.author.id;

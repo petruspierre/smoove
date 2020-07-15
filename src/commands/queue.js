@@ -16,6 +16,9 @@ module.exports = {
         .setFooter(`Pedido por ${message.member.user.tag}`);
 
       serverQueue.songs.forEach((song, index) => {
+        if (index === 0) {
+          embed.addField(`Tocando agora - ${song.title}`, `${song.author} - ${timeFormat(song.length)}`);
+        }
         embed.addField(`#${index + 1} - ${song.title}`, `${song.author} - ${timeFormat(song.length)}`);
       });
 
