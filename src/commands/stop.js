@@ -3,7 +3,6 @@ module.exports = {
   aliases: ['st', 'parar'],
   description: 'Para de tocar.',
   guildOnly: true,
-  usage: '',
   cooldown: 3,
   async execute(client, message, args, serverQueue, queue, youtube) {
     const voiceChannel = message.member.voice.channel;

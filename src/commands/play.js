@@ -6,8 +6,9 @@ module.exports = {
   name: 'play',
   aliases: ['p', 'tocar'],
   description: 'Toque uma música.',
-  usage: '<titulo> ou <Youtube link>',
+  usage: '<titulo> ou <link>',
   guildOnly: true,
+  args: true,
   cooldown: 3,
   async execute(client, message, args, serverQueue, queue, youtube) {
     const voiceChannel = message.member.voice.channel;

@@ -3,7 +3,6 @@ module.exports = {
   aliases: ['sk', 'pular'],
   description: 'Pula a música que está tocando.',
   guildOnly: true,
-  usage: '',
   cooldown: 2,
   async execute(client, message, args, serverQueue, queue, youtube) {
     const voiceChannel = message.member.voice.channel;

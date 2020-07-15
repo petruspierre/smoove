@@ -6,7 +6,6 @@ module.exports = {
   aliases: ['q', 'fila'],
   description: 'Veja as músicas que estão na fila para serem tocadas.',
   guildOnly: true,
-  usage: '',
   cooldown: 2,
   async execute(client, message, args, serverQueue, queue, youtube) {
     if (serverQueue) {

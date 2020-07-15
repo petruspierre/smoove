@@ -5,14 +5,14 @@ module.exports = {
   aliases: ['comandos', 'help'],
   description: 'Lista todos os comandos ou mostra mais informações sobre um específico.',
   usage: '[comando]',
-  cooldown: 10,
-  execute(_, message, args) {
+  cooldown: 5,
+  async execute(client, message, args, queue, youtube) {
     const data = [];
     const { commands } = message.client;
 
     if (!args.length) {
       data.push('Aqui vai a lista de comandos:\n');
-      data.push(commands.map((command) => `\`+${command.name}\` - ${command.description}`).join('\n'));
+      data.push(commands.map((command) => `\`${prefix}${command.name}\` - ${command.description}`).join('\n'));
       data.push(`\nVocê pode também usar \`${prefix}ajuda [comando]\` para obter informações de um comando específico`);
 
       return message.author.send(data, { split: true })
@@ -36,7 +36,7 @@ module.exports = {
 
     data.push(`**Nome:** ${command.name}`);
 
-    if (command.aliases) data.push(`**Sinônimos:** ${command.aliases.join(', ')}`);
+    if (command.aliases) data.push(`**Sinônimos:** \`${command.aliases.join('`, `')}\``);
     if (command.description) data.push(`**Descrição:** ${command.description}`);
     if (command.usage) data.push(`**Uso:** \`${prefix}${command.name} ${command.usage}\``);
 
