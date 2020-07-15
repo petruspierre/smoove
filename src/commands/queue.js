@@ -18,8 +18,9 @@ module.exports = {
       serverQueue.songs.forEach((song, index) => {
         if (index === 0) {
           embed.addField(`Tocando agora - ${song.title}`, `${song.author} - ${timeFormat(song.length)}`);
+        } else {
+          embed.addField(`#${index + 1} - ${song.title}`, `${song.author} - ${timeFormat(song.length)}`);
         }
-        embed.addField(`#${index + 1} - ${song.title}`, `${song.author} - ${timeFormat(song.length)}`);
       });
 
       return message.channel.send(embed);

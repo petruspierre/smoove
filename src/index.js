@@ -11,7 +11,7 @@ const cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 
 const youtube = new YouTube();
-youtube.setKey('AIzaSyB5kElBzMj5Oze971aFJ4divMxpzKp-gHs');
+youtube.setKey(process.env.YOUTUBE_KEY);
 
 const queue = new Map();
 
